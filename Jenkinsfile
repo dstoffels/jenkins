@@ -3,7 +3,9 @@ pipeline{
   
   stages {
     stage("Test"){
-      sh "echo Running tests..."
+      steps{
+        sh "echo Running tests..."
+      }
     }
 
     stage ("Build"){
@@ -31,7 +33,9 @@ pipeline{
     }
     
     stage("Deploy"){
-      sh "echo Deploying application to EC2 instance..."
+      steps{
+        sh "echo Deploying application to EC2 instance..."
+      }
     }
   }
 }
