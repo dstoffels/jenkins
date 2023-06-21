@@ -28,11 +28,9 @@ pipeline{
         }
         sh "docker --version"
         
-      //   withCredentials([usernamePassword(credentialsId: 'personal-docker-hub-creds', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-      //     sh "echo ${DOCKER_USERNAME}"
-      //   }
-        
-      // }
+        withCredentials([usernamePassword(credentialsId: 'personal-docker-hub-creds', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+          sh "echo ${DOCKER_USERNAME}"
+        }
       }
     }
     
